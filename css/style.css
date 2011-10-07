@@ -86,7 +86,22 @@ a:hover { color: #036; }
     \\ ========================================== //
 */
 
+body {
+    background-color: black;
+}
 
+video {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    height: 33%;
+}
+
+.column {
+    width: 33%;
+    height: 100%;
+    float: left;
+}
 
 
 

@@ -21,14 +21,18 @@
 	<script src="js/libs/modernizr-1.7.min.js"></script>
 </head>
 <body>
-	<div id="container">		
-		<div id="main" role="main">
+	<div id="main" role="main">
+		<div class="column c1">
 			<video src="videos/1.webm" muted="muted"></video>
 			<video src="videos/2.webm" muted="muted"></video>
 			<video src="videos/3.webm" muted="muted"></video>
+		</div>
+		<div class="column c2">
 			<video src="videos/1.webm" muted="muted"></video>
 			<video src="videos/2.webm" muted="muted"></video>
 			<video src="videos/3.webm" muted="muted"></video>
+		</div>
+		<div class="column c3">
 			<video src="videos/1.webm" muted="muted"></video>
 			<video src="videos/2.webm" muted="muted"></video>
 			<video src="videos/3.webm" muted="muted"></video>
@@ -42,14 +46,22 @@
 	<script>
 	$(function()
 	{
+		videosArray = $('video').toArray();
+		
 		$('video').click(function()
-		{
+		{			
 			if (!this.paused)
 			{
-				this.pause()
+				this.pause();
 			}
 			else
 			{
+				$.each(videosArray, function(i, el){
+					if (!el.paused)
+					{
+						el.pause();
+					}
+				});
 				this.play();
 			}
 		});
