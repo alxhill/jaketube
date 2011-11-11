@@ -50,7 +50,7 @@
 		
 		$('video').click(function()
 		{			
-			if (!this.paused)
+			if (!this.paused && typeof this.audio === "undefined")
 			{
 				this.pause();
 			}
@@ -62,6 +62,10 @@
 						el.pause();
 					}
 				});
+				if (typeof this.audio === "undefined")
+				{
+				  this.audio = new Audio();
+				}
 				this.play();
 			}
 		});
